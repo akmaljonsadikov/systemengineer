@@ -1,5 +1,5 @@
 ---
-- name: use mysql role playbook
+- name: use mysql/mariadb role playbook
   hosts: DNS
   user: ansible
   become: true
