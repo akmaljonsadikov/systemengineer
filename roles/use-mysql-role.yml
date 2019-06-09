@@ -1,6 +1,6 @@
 ---
 - name: use mysql role playbook
-  hosts: web
+  hosts: DNS
   user: ansible
   become: true
   roles:
