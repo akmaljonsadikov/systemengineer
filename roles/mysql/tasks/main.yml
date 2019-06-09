@@ -1,2 +1,27 @@
 ---
-# tasks file for mysql
+# t---#tasks file for myfirewalld
+- name: install MariaDB server
+  yum:
+    name: MariaDB-server
+    state: latest
+
+- name: install MariaDB client
+  yum:
+    name: MariaDB-client
+    state: latest
+
+- name: template mariadb repo file
+  template:
+    src: mariadb.repo.j2
+    dest: /etc/yum.repos.d/mariadb.repo
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart mariadb
+
+- name: start and enable mariadb service
+  service:
+    name: mariadb
+    state: started
+    enabled: true

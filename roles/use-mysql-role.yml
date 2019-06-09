@@ -1,0 +1,7 @@
+---
+- name: use mysql role playbook
+  hosts: web
+  user: ansible
+  become: true
+  roles:
+    - mysql
