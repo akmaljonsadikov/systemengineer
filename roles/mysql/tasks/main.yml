@@ -1,13 +1,13 @@
 ---
 # t---#tasks file for myfirewalld
-- name: install MariaDB server
+- name: install mariadb server
   yum:
-    name: MariaDB-server
+    name: mariadb-server
     state: latest
 
 - name: install MariaDB client
   yum:
-    name: MariaDB-client
+    name: mariadb-client
     state: latest
 
 - name: template mariadb repo file
