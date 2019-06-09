@@ -1,15 +1,4 @@
 ---
-# t---#tasks file for myfirewalld
-- name: install mariadb server
-  yum:
-    name: mariadb-server
-    state: latest
-
-- name: install MariaDB client
-  yum:
-    name: mariadb-client
-    state: latest
-
 - name: template mariadb repo file
   template:
     src: mariadb.repo.j2
@@ -17,6 +6,11 @@
     owner: root
     group: root
     mode: 0644
+
+- name: install MariaDB server
+  yum:
+    name: [ 'mariadb-server','MariaDB-client' ]
+    state: latest
   notify:
     - restart mariadb
 

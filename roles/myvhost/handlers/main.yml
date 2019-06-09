@@ -1,6 +1,13 @@
 ---
 # handlers file for myvhost
+<<<<<<< HEAD
+ - name: restart httpd
+   service:
+       name: httpd
+       state: restarted
+=======
 - name: restart httpd
   service:
     name: httpd
     state: restarted
+>>>>>>> 17d74488d6fd07553bde30929135ad64ec75a4fb
